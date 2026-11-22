@@ -2,18 +2,65 @@
 
 [ext_resource type="Script" uid="uid://bsd34hngpi3rm" path="res://scenes/console.gd" id="1_tqaav"]
 
-[node name="Console" type="Node2D" unique_id=1728134349]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tj3jp"]
+size = Vector2(136, 77)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dsyr7"]
+size = Vector2(136, 60)
+
+[node name="Console" type="StaticBody2D" unique_id=840979023]
+collision_mask = 3
 script = ExtResource("1_tqaav")
 required_attempts = 5
 
-[node name="PanelContainer" type="PanelContainer" parent="." unique_id=23204541]
-offset_right = 125.0
-offset_bottom = 49.0
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2109654383]
+position = Vector2(68, 38.5)
+shape = SubResource("RectangleShape2D_tj3jp")
 
-[node name="StatusLabel" type="Label" parent="PanelContainer" unique_id=868372129]
+[node name="ColorRect" type="ColorRect" parent="." unique_id=862395136]
+offset_right = 136.0
+offset_bottom = 77.0
+color = Color(0.19434929, 0.19434926, 0.19434926, 1)
+
+[node name="PanelContainer" type="PanelContainer" parent="ColorRect" unique_id=23204541]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 130.0
+offset_bottom = 54.0
+
+[node name="StatusLabel" type="Label" parent="ColorRect/PanelContainer" unique_id=868372129]
 unique_name_in_owner = true
 custom_maximum_size = Vector2(125, 100)
 layout_mode = 2
 text = "Signal offline - 0/3 attempts"
 horizontal_alignment = 1
 autowrap_mode = 3
+
+[node name="Button" type="Button" parent="ColorRect" unique_id=1111269917]
+layout_mode = 0
+offset_left = 44.0
+offset_top = 61.0
+offset_right = 89.0
+offset_bottom = 69.0
+
+[node name="ConsoleArea" type="Area2D" parent="." unique_id=1517475835]
+unique_name_in_owner = true
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ConsoleArea" unique_id=833180489]
+position = Vector2(68, 107)
+shape = SubResource("RectangleShape2D_dsyr7")
+
+[node name="AttemptLabel" type="Label" parent="." unique_id=590585920]
+unique_name_in_owner = true
+visible = false
+offset_top = -14.0
+offset_right = 140.0
+offset_bottom = 9.0
+theme_override_font_sizes/font_size = 9
+text = "Press 'E\" to attempt connection."
+
+[connection signal="body_entered" from="ConsoleArea" to="." method="_on_console_area_body_entered"]
+[connection signal="body_exited" from="ConsoleArea" to="." method="_on_console_area_body_exited"]

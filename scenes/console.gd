@@ -1,17 +1,20 @@
 extends Node2D
 
+var console_enabled: bool = false
 var attempts: int = 0
 signal signal_restored
 @export var required_attempts: int = 3
 @onready var status_label: Label = %StatusLabel
+@onready var attempt_label: Label = %AttemptLabel
 
 func _ready() -> void:
 	status_label.text = "Signal offline - 0/" + str(required_attempts) + " attempts"
 	
-func trying_connection() -> void:
+func attempt_connection() -> void:
 	if attempts >= required_attempts:
 		return
-	else:
+
+	if console_enabled == true:
 		attempts += 1
 		status_label.text = "Connecting - " + str(attempts) + "/" + str(required_attempts) + " attempts"
 		print(attempts)
@@ -21,4 +24,12 @@ func trying_connection() -> void:
 
 func _unhandled_key_input(event: InputEvent) -> void:
 	if event.is_action_pressed("try_connection"):
-		trying_connection()
+		attempt_connection()
+
+func _on_console_area_body_entered(body: Node2D) -> void:
+	console_enabled = true
+	attempt_label.visible = true
+
+func _on_console_area_body_exited(body: Node2D) -> void:
+	console_enabled = false
+	attempt_label.visible = false

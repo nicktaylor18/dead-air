@@ -50,12 +50,16 @@ position = Vector2(655, 46)
 [node name="Crate3" parent="Furniture" unique_id=1714649786 instance=ExtResource("2_rvslj")]
 position = Vector2(804, 48)
 
-[node name="Console" parent="Furniture" unique_id=1728134349 instance=ExtResource("7_jlsqs")]
-position = Vector2(513, 268)
-
 [node name="Interactables" type="Node2D" parent="." unique_id=781004755]
 
 [node name="Door" parent="Interactables" unique_id=764587154 instance=ExtResource("7_q8u5g")]
 position = Vector2(741, 538)
 
-[connection signal="signal_restored" from="Furniture/Console" to="Interactables/Door" method="_on_console_signal_restored"]
+[node name="Console" parent="." unique_id=1728134349 instance=ExtResource("7_jlsqs")]
+position = Vector2(63, 56)
+required_attempts = 6
+
+[node name="Console2" parent="." unique_id=840979023 instance=ExtResource("7_jlsqs")]
+position = Vector2(268, 295)
+
+[connection signal="signal_restored" from="Console" to="Interactables/Door" method="_on_console_signal_restored"]
