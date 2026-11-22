@@ -2,11 +2,26 @@
 
 [ext_resource type="PackedScene" uid="uid://8u1y2khj8aq3" path="res://scenes/Player.tscn" id="1_elqb8"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_elqb8"]
+size = Vector2(40, 648)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dsyr7"]
 size = Vector2(40, 648)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rvslj"]
+size = Vector2(1152, 40)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tj3jp"]
 size = Vector2(1152, 40)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0bbpv"]
+size = Vector2(134, 131)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rarhs"]
+size = Vector2(266, 131)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vcsgt"]
+size = Vector2(61, 65)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cl616"]
 size = Vector2(134, 131)
@@ -26,7 +41,7 @@ offset_bottom = 648.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="VertWall" unique_id=1783430019]
 position = Vector2(20, 324)
-shape = SubResource("RectangleShape2D_dsyr7")
+shape = SubResource("RectangleShape2D_elqb8")
 
 [node name="VertWall2" type="StaticBody2D" parent="." unique_id=670833907]
 position = Vector2(1112, 0)
@@ -47,7 +62,7 @@ offset_bottom = 40.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HorWall" unique_id=156585998]
 position = Vector2(576, 20)
-shape = SubResource("RectangleShape2D_tj3jp")
+shape = SubResource("RectangleShape2D_rvslj")
 
 [node name="HorWall2" type="StaticBody2D" parent="." unique_id=2089509583]
 position = Vector2(0, 608)
@@ -69,29 +84,32 @@ offset_bottom = 131.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Crate" unique_id=1013783384]
 position = Vector2(67, 65.5)
-shape = SubResource("RectangleShape2D_cl616")
+shape = SubResource("RectangleShape2D_0bbpv")
 
-[node name="Crate2" type="StaticBody2D" parent="." unique_id=726900438]
+[node name="Desk" type="StaticBody2D" parent="." unique_id=726900438]
 position = Vector2(511, 185)
 
-[node name="CrateRect" type="ColorRect" parent="Crate2" unique_id=123998694]
+[node name="CrateRect" type="ColorRect" parent="Desk" unique_id=123998694]
+offset_left = -133.0
 offset_right = 134.0
 offset_bottom = 131.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Crate2" unique_id=1888162754]
-position = Vector2(67, 65.5)
-shape = SubResource("RectangleShape2D_cl616")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Desk" unique_id=1888162754]
+position = Vector2(1, 65.5)
+shape = SubResource("RectangleShape2D_rarhs")
 
-[node name="Crate3" type="StaticBody2D" parent="." unique_id=1719151071]
-position = Vector2(208, 467)
+[node name="SmallCrate" type="StaticBody2D" parent="." unique_id=1719151071]
+position = Vector2(129, 514)
 
-[node name="CrateRect" type="ColorRect" parent="Crate3" unique_id=1052557493]
-offset_right = 134.0
-offset_bottom = 131.0
+[node name="CrateRect" type="ColorRect" parent="SmallCrate" unique_id=1052557493]
+offset_left = -32.0
+offset_top = -30.0
+offset_right = 31.0
+offset_bottom = 35.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Crate3" unique_id=960289708]
-position = Vector2(67, 65.5)
-shape = SubResource("RectangleShape2D_cl616")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SmallCrate" unique_id=960289708]
+position = Vector2(-1.5, 2.5)
+shape = SubResource("RectangleShape2D_vcsgt")
 
 [node name="SpecialCrate" type="StaticBody2D" parent="." unique_id=836255920]
 position = Vector2(810, 277)
