@@ -6,7 +6,14 @@
 script = ExtResource("1_tqaav")
 required_attempts = 5
 
-[node name="StatusLabel" type="Label" parent="." unique_id=868372129]
-offset_right = 40.0
-offset_bottom = 23.0
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=23204541]
+offset_right = 125.0
+offset_bottom = 49.0
+
+[node name="StatusLabel" type="Label" parent="PanelContainer" unique_id=868372129]
+unique_name_in_owner = true
+custom_maximum_size = Vector2(125, 100)
+layout_mode = 2
 text = "Signal offline - 0/3 attempts"
+horizontal_alignment = 1
+autowrap_mode = 3

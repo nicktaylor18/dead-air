@@ -9,9 +9,9 @@ size = Vector2(32, 32)
 [node name="Player" type="CharacterBody2D" unique_id=176103627]
 script = ExtResource("1_v6fml")
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=78113782]
+shape = SubResource("RectangleShape2D_dsyr7")
+
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1726025981]
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("2_3li8b")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=78113782]
-shape = SubResource("RectangleShape2D_dsyr7")

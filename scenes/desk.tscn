@@ -5,11 +5,12 @@ size = Vector2(135, 63)
 
 [node name="Desk" type="StaticBody2D" unique_id=2109648496]
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1797232736]
+position = Vector2(66.5, 31.5)
+shape = SubResource("RectangleShape2D_rarhs")
+
 [node name="DeskRect" type="ColorRect" parent="." unique_id=2129059398]
 offset_left = -1.0
 offset_right = 134.0
 offset_bottom = 62.0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1797232736]
-position = Vector2(66.5, 31.5)
-shape = SubResource("RectangleShape2D_rarhs")
+color = Color(0.446777, 0.44677705, 0.44677705, 1)

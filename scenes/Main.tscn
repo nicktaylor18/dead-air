@@ -1,24 +1,13 @@
 [gd_scene format=3 uid="uid://d16b0uqag33fy"]
 
 [ext_resource type="PackedScene" uid="uid://8u1y2khj8aq3" path="res://scenes/Player.tscn" id="1_elqb8"]
+[ext_resource type="PackedScene" uid="uid://cx1582i26q4to" path="res://scenes/vert_wall.tscn" id="2_nxtc6"]
 [ext_resource type="PackedScene" uid="uid://7fv77ooflgoa" path="res://scenes/crate.tscn" id="2_rvslj"]
+[ext_resource type="PackedScene" uid="uid://cqsbovk41gan2" path="res://scenes/hor_wall.tscn" id="3_jlsqs"]
 [ext_resource type="PackedScene" uid="uid://cxlwmxp86an0l" path="res://scenes/desk.tscn" id="3_rarhs"]
 [ext_resource type="PackedScene" uid="uid://decg628plhkwu" path="res://scenes/small_crate.tscn" id="4_vcsgt"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_elqb8"]
-size = Vector2(40, 648)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_dsyr7"]
-size = Vector2(40, 648)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_rvslj"]
-size = Vector2(1152, 40)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_tj3jp"]
-size = Vector2(1152, 40)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_cl616"]
-size = Vector2(134, 131)
+[ext_resource type="PackedScene" uid="uid://d2ssnl1gs41i4" path="res://scenes/Console.tscn" id="7_jlsqs"]
+[ext_resource type="PackedScene" uid="uid://bf2bs5q6xaef" path="res://scenes/door.tscn" id="7_q8u5g"]
 
 [node name="Main" type="Node2D" unique_id=998002667]
 
@@ -30,53 +19,24 @@ speed = 240
 
 [node name="Walls" type="Node2D" parent="." unique_id=2107968689]
 
-[node name="VertWall" type="StaticBody2D" parent="Walls" unique_id=1786772384]
+[node name="VertWall" parent="Walls" unique_id=1485700101 instance=ExtResource("2_nxtc6")]
 
-[node name="VertColorRect" type="ColorRect" parent="Walls/VertWall" unique_id=1506689393]
-offset_right = 40.0
-offset_bottom = 648.0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/VertWall" unique_id=1783430019]
-position = Vector2(20, 324)
-shape = SubResource("RectangleShape2D_elqb8")
-
-[node name="VertWall2" type="StaticBody2D" parent="Walls" unique_id=670833907]
+[node name="VertWall2" parent="Walls" unique_id=1695679526 instance=ExtResource("2_nxtc6")]
 position = Vector2(1112, 0)
 
-[node name="VertColorRect" type="ColorRect" parent="Walls/VertWall2" unique_id=2047623012]
-offset_right = 40.0
-offset_bottom = 648.0
+[node name="VertWall3" parent="Walls" unique_id=1766486067 instance=ExtResource("2_nxtc6")]
+position = Vector2(754, 0)
+scale = Vector2(1, 0.825)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/VertWall2" unique_id=1756717895]
-position = Vector2(20, 324)
-shape = SubResource("RectangleShape2D_dsyr7")
+[node name="HorWall" parent="Walls" unique_id=1234593636 instance=ExtResource("3_jlsqs")]
 
-[node name="HorWall" type="StaticBody2D" parent="Walls" unique_id=692466476]
-
-[node name="HorRect2" type="ColorRect" parent="Walls/HorWall" unique_id=7089906]
-offset_right = 1152.0
-offset_bottom = 40.0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/HorWall" unique_id=156585998]
-position = Vector2(576, 20)
-shape = SubResource("RectangleShape2D_rvslj")
-
-[node name="HorWall2" type="StaticBody2D" parent="Walls" unique_id=2089509583]
+[node name="HorWall2" parent="Walls" unique_id=1196304688 instance=ExtResource("3_jlsqs")]
 position = Vector2(0, 608)
-
-[node name="HorRect2" type="ColorRect" parent="Walls/HorWall2" unique_id=1188580449]
-offset_right = 1152.0
-offset_bottom = 40.0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/HorWall2" unique_id=617119928]
-position = Vector2(576, 20)
-shape = SubResource("RectangleShape2D_tj3jp")
 
 [node name="Furniture" type="Node2D" parent="." unique_id=1291483307]
 
 [node name="Crate" parent="Furniture" unique_id=273118951 instance=ExtResource("2_rvslj")]
 position = Vector2(509, 44)
-crate_color = Color(1, 0, 0, 1)
 
 [node name="Desk" parent="Furniture" unique_id=2109648496 instance=ExtResource("3_rarhs")]
 position = Vector2(511, 185)
@@ -84,23 +44,18 @@ position = Vector2(511, 185)
 [node name="SmallCrate" parent="Furniture" unique_id=541853133 instance=ExtResource("4_vcsgt")]
 position = Vector2(129, 514)
 
-[node name="SpecialCrate" type="StaticBody2D" parent="Furniture" unique_id=836255920]
-position = Vector2(810, 277)
-collision_layer = 4
-
-[node name="SpCrateRect" type="ColorRect" parent="Furniture/SpecialCrate" unique_id=1124083787]
-offset_right = 134.0
-offset_bottom = 131.0
-color = Color(6.8345666e-06, 0.7738233, 1.540184e-06, 1)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Furniture/SpecialCrate" unique_id=2145965873]
-position = Vector2(67, 65.5)
-shape = SubResource("RectangleShape2D_cl616")
-
 [node name="Crate2" parent="Furniture" unique_id=1769401921 instance=ExtResource("2_rvslj")]
 position = Vector2(655, 46)
-crate_color = Color(0, 1, 0, 1)
 
 [node name="Crate3" parent="Furniture" unique_id=1714649786 instance=ExtResource("2_rvslj")]
 position = Vector2(804, 48)
-crate_color = Color(0, 0, 1, 1)
+
+[node name="Console" parent="Furniture" unique_id=1728134349 instance=ExtResource("7_jlsqs")]
+position = Vector2(513, 268)
+
+[node name="Interactables" type="Node2D" parent="." unique_id=781004755]
+
+[node name="Door" parent="Interactables" unique_id=764587154 instance=ExtResource("7_q8u5g")]
+position = Vector2(741, 538)
+
+[connection signal="signal_restored" from="Furniture/Console" to="Interactables/Door" method="_on_console_signal_restored"]

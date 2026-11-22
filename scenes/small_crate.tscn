@@ -5,12 +5,12 @@ size = Vector2(61, 65)
 
 [node name="SmallCrate" type="StaticBody2D" unique_id=541853133]
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2041554236]
+position = Vector2(-1.5, 2.5)
+shape = SubResource("RectangleShape2D_vcsgt")
+
 [node name="SmCrateRect" type="ColorRect" parent="." unique_id=1639407725]
 offset_left = -32.0
 offset_top = -30.0
 offset_right = 29.0
 offset_bottom = 35.0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2041554236]
-position = Vector2(-1.5, 2.5)
-shape = SubResource("RectangleShape2D_vcsgt")
