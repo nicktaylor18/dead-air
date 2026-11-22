@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://d2ssnl1gs41i4"]
+
+[ext_resource type="Script" uid="uid://bsd34hngpi3rm" path="res://scenes/console.gd" id="1_tqaav"]
+
+[node name="Console" type="Node2D" unique_id=1728134349]
+script = ExtResource("1_tqaav")
+required_attempts = 5
+
+[node name="StatusLabel" type="Label" parent="." unique_id=868372129]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Signal offline - 0/3 attempts"

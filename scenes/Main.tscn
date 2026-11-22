@@ -1,0 +1,107 @@
+[gd_scene format=3 uid="uid://d16b0uqag33fy"]
+
+[ext_resource type="PackedScene" uid="uid://8u1y2khj8aq3" path="res://scenes/Player.tscn" id="1_elqb8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dsyr7"]
+size = Vector2(40, 648)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tj3jp"]
+size = Vector2(1152, 40)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cl616"]
+size = Vector2(134, 131)
+
+[node name="Main" type="Node2D" unique_id=998002667]
+
+[node name="Player" parent="." unique_id=176103627 instance=ExtResource("1_elqb8")]
+z_index = 1
+position = Vector2(220, 136)
+collision_layer = 2
+
+[node name="VertWall" type="StaticBody2D" parent="." unique_id=1786772384]
+
+[node name="VertColorRect" type="ColorRect" parent="VertWall" unique_id=1506689393]
+offset_right = 40.0
+offset_bottom = 648.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="VertWall" unique_id=1783430019]
+position = Vector2(20, 324)
+shape = SubResource("RectangleShape2D_dsyr7")
+
+[node name="VertWall2" type="StaticBody2D" parent="." unique_id=670833907]
+position = Vector2(1112, 0)
+
+[node name="VertColorRect" type="ColorRect" parent="VertWall2" unique_id=2047623012]
+offset_right = 40.0
+offset_bottom = 648.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="VertWall2" unique_id=1756717895]
+position = Vector2(20, 324)
+shape = SubResource("RectangleShape2D_dsyr7")
+
+[node name="HorWall" type="StaticBody2D" parent="." unique_id=692466476]
+
+[node name="HorRect2" type="ColorRect" parent="HorWall" unique_id=7089906]
+offset_right = 1152.0
+offset_bottom = 40.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HorWall" unique_id=156585998]
+position = Vector2(576, 20)
+shape = SubResource("RectangleShape2D_tj3jp")
+
+[node name="HorWall2" type="StaticBody2D" parent="." unique_id=2089509583]
+position = Vector2(0, 608)
+
+[node name="HorRect2" type="ColorRect" parent="HorWall2" unique_id=1188580449]
+offset_right = 1152.0
+offset_bottom = 40.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HorWall2" unique_id=617119928]
+position = Vector2(576, 20)
+shape = SubResource("RectangleShape2D_tj3jp")
+
+[node name="Crate" type="StaticBody2D" parent="." unique_id=1697362768]
+position = Vector2(509, 44)
+
+[node name="CrateRect" type="ColorRect" parent="Crate" unique_id=1410009829]
+offset_right = 134.0
+offset_bottom = 131.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Crate" unique_id=1013783384]
+position = Vector2(67, 65.5)
+shape = SubResource("RectangleShape2D_cl616")
+
+[node name="Crate2" type="StaticBody2D" parent="." unique_id=726900438]
+position = Vector2(511, 185)
+
+[node name="CrateRect" type="ColorRect" parent="Crate2" unique_id=123998694]
+offset_right = 134.0
+offset_bottom = 131.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Crate2" unique_id=1888162754]
+position = Vector2(67, 65.5)
+shape = SubResource("RectangleShape2D_cl616")
+
+[node name="Crate3" type="StaticBody2D" parent="." unique_id=1719151071]
+position = Vector2(208, 467)
+
+[node name="CrateRect" type="ColorRect" parent="Crate3" unique_id=1052557493]
+offset_right = 134.0
+offset_bottom = 131.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Crate3" unique_id=960289708]
+position = Vector2(67, 65.5)
+shape = SubResource("RectangleShape2D_cl616")
+
+[node name="SpecialCrate" type="StaticBody2D" parent="." unique_id=836255920]
+position = Vector2(810, 277)
+collision_layer = 4
+
+[node name="CrateRect" type="ColorRect" parent="SpecialCrate" unique_id=1124083787]
+offset_right = 134.0
+offset_bottom = 131.0
+color = Color(6.8345666e-06, 0.7738233, 1.540184e-06, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SpecialCrate" unique_id=2145965873]
+position = Vector2(67, 65.5)
+shape = SubResource("RectangleShape2D_cl616")
