@@ -2,6 +2,7 @@ extends Node2D
 
 var console_enabled: bool = false
 var attempts: int = 0
+signal attempt(attempts, required_attempts)
 signal signal_restored
 @export var required_attempts: int = 3
 @onready var status_label: Label = %StatusLabel
@@ -17,7 +18,9 @@ func attempt_connection() -> void:
 	if console_enabled == true:
 		attempts += 1
 		status_label.text = "Connecting - " + str(attempts) + "/" + str(required_attempts) + " attempts"
-		print(attempts)
+		emit_signal("attempt")
+		attempt.emit(attempts,required_attempts)
+		
 		if attempts >= required_attempts:
 			status_label.text = "Signal restored"
 			emit_signal("signal_restored")

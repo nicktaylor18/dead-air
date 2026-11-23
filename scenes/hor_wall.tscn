@@ -3,12 +3,19 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rvslj"]
 size = Vector2(1152, 40)
 
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_dsyr7"]
+polygon = PackedVector2Array(0, 0, 0, 40, 1152, 40, 1152, 0)
+
 [node name="HorWall" type="StaticBody2D" unique_id=1234593636]
 
 [node name="HorRect2" type="ColorRect" parent="." unique_id=718988358]
 offset_right = 1152.0
 offset_bottom = 40.0
+color = Color(0.10747976, 0.10747973, 0.10747973, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=19818890]
 position = Vector2(576, 20)
 shape = SubResource("RectangleShape2D_rvslj")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="." unique_id=496483259]
+occluder = SubResource("OccluderPolygon2D_dsyr7")

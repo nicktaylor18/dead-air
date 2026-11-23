@@ -8,8 +8,15 @@
 [ext_resource type="PackedScene" uid="uid://decg628plhkwu" path="res://scenes/small_crate.tscn" id="4_vcsgt"]
 [ext_resource type="PackedScene" uid="uid://d2ssnl1gs41i4" path="res://scenes/Console.tscn" id="7_jlsqs"]
 [ext_resource type="PackedScene" uid="uid://bf2bs5q6xaef" path="res://scenes/door.tscn" id="7_q8u5g"]
+[ext_resource type="PackedScene" uid="uid://dh5j6rrgty18n" path="res://scenes/light.tscn" id="9_q8u5g"]
+[ext_resource type="PackedScene" uid="uid://cv3a2nkcy63rt" path="res://scenes/ui.tscn" id="10_lhr70"]
 
 [node name="Main" type="Node2D" unique_id=998002667]
+
+[node name="FloorRect" type="ColorRect" parent="." unique_id=127023650]
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0.28118682, 0.28118688, 0.28118682, 1)
 
 [node name="Player" parent="." unique_id=176103627 instance=ExtResource("1_elqb8")]
 z_index = 1
@@ -62,4 +69,11 @@ required_attempts = 6
 [node name="Console2" parent="." unique_id=840979023 instance=ExtResource("7_jlsqs")]
 position = Vector2(268, 295)
 
+[node name="Light" parent="." unique_id=1583127870 instance=ExtResource("9_q8u5g")]
+position = Vector2(746, 326)
+
+[node name="UI" parent="." unique_id=1027299547 instance=ExtResource("10_lhr70")]
+
+[connection signal="attempt" from="Console" to="UI" method="_on_console_attempt"]
 [connection signal="signal_restored" from="Console" to="Interactables/Door" method="_on_console_signal_restored"]
+[connection signal="signal_restored" from="Console" to="Light" method="_on_console_signal_restored"]

@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://cv3a2nkcy63rt"]
+
+[ext_resource type="Script" uid="uid://b2swimef6apnm" path="res://scenes/ui.gd" id="1_nt7q6"]
+
+[node name="UI" type="Control" unique_id=1027299547]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_nt7q6")
+
+[node name="AttemptsLabel" type="Label" parent="." unique_id=1845522493]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 144.0
+offset_top = 2.0
+offset_right = 184.0
+offset_bottom = 25.0
+text = "0/0"
+horizontal_alignment = 1
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=1689778004]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 81.0
+offset_right = 250.0
+offset_bottom = 27.0
+max_value = 6.0
+step = 1.0
+show_percentage = false
+
+[node name="BarLabel" type="Label" parent="." unique_id=1347489446]
+layout_mode = 0
+offset_right = 78.0
+offset_bottom = 23.0
+text = "Attempts:"
